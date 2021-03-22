@@ -1,0 +1,39 @@
+{
+  "name": "@plugin-author/wp-plugin-starter",
+  "version": "1.0.0",
+  "description": "Some plugin description",
+  "author": "Author Name <author@email.com>",
+  "license": "GPL-3.0",
+  "keywords": [],
+  "devDependencies": {
+    "@wordpress/scripts": "^13.0.3",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "npm:wp-prettier@^2.2.1-beta-1"
+  },
+  "scripts": {
+    "dev": "wp-scripts start",
+    "build": "wp-scripts build",
+    "lint:js": "wp-scripts lint-js src/",
+    "lint:css": "wp-scripts lint-style src/",
+    "lint:fix": "composer run phpcbf . && npm run lint:js -- --fix && npm run lint:css -- --fix",
+    "make-pot": "wp i18n make-pot ./ languages/wp-plugin-starter.pot --exclude=assets",
+    "clean:assets": "rimraf assets/css && rimraf assets/js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.php": [
+      "composer run phpcs"
+    ],
+    "*.js": [
+      "wp-scripts lint-js"
+    ],
+    "*.scss": [
+      "wp-scripts lint-style"
+    ]
+  }
+}

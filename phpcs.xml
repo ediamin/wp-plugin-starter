@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ruleset name="WPPluginStarter" namespace="WPPluginStarter">
+    <description>PHP code sniffer configuration for WP Plugin Starter plugin</description>
+
+    <!-- Exclude paths -->
+    <exclude-pattern>assets/</exclude-pattern>
+    <exclude-pattern>src/</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*.js</exclude-pattern>
+
+    <!-- Configs -->
+    <config name="minimum_supported_wp_version" value="5.0" />
+    <config name="testVersion" value="7.2-" />
+
+    <!-- PHPCompatibility -->
+    <rule ref="PHPCompatibilityWP" />
+
+    <!-- WordPress -->
+    <rule ref="WordPress-Core">
+        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
+        <exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+        <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+        <exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+    </rule>
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array" value="wp-plugin-starter" />
+        </properties>
+    </rule>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"></rule>
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="tabIndent" value="false"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent" />
+</ruleset>
