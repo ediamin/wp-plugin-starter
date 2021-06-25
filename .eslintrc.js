@@ -6,12 +6,6 @@ module.exports = {
     rules: {
         ...defaultConfig.rules,
         'prettier/prettier': [ 'error', prettierConfig ],
-        'no-unused-expressions': [
-            'error',
-            {
-                allowShortCircuit: true,
-            },
-        ],
         '@wordpress/i18n-text-domain': [
             'error',
             {

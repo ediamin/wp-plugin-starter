@@ -32,6 +32,6 @@ module.exports = {
 
     output: {
         filename: '[name].js',
-        path: resolve( 'assets', 'js' ),
+        path: resolve( 'assets/js' ),
     },
 };

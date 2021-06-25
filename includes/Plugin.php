@@ -63,8 +63,8 @@ class Plugin {
      * @return void
      */
     private function define_constants() {
-        define( 'WP_GITHUB_PROFILE_EMBED_VERSION', $this->version );
-        define( 'WP_GITHUB_PROFILE_EMBED_ASSETS', WP_GITHUB_PROFILE_EMBED_URL . '/assets' );
+        define( 'WP_PLUGIN_STARTER_VERSION', $this->version );
+        define( 'WP_PLUGIN_STARTER_ASSETS', WP_PLUGIN_STARTER_URL . '/assets' );
     }
 
     /**
@@ -110,6 +110,6 @@ class Plugin {
      * @return void
      */
     public function load_plugin_textdomain() {
-        load_plugin_textdomain( 'embed-github-profile', false, dirname( plugin_basename( WP_GITHUB_PROFILE_EMBED_FILE ) ) . '/languages/' );
+        load_plugin_textdomain( 'embed-github-profile', false, dirname( plugin_basename( WP_PLUGIN_STARTER_FILE ) ) . '/languages/' );
     }
 }
